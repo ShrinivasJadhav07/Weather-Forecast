@@ -62,6 +62,13 @@ NODE_ENV=development  # production or development
 npm run dev
 ```
 
+### Production Mode
+
+```bash
+npm start
+```
+
+
 This will start the server with nodemon, which automatically restarts the server when files change.
 
 
