@@ -64,17 +64,6 @@ npm run dev
 
 This will start the server with nodemon, which automatically restarts the server when files change.
 
-### Production Mode
-
-```bash
-npm start
-```
-
-## API Documentation
-
-Once the server is running, you can access the API documentation at:
-- Swagger UI: `http://localhost:5000/api-docs`
-- JSON Spec: `http://localhost:5000/api-docs.json`
 
 ## Available Endpoints
 
@@ -84,28 +73,6 @@ Once the server is running, you can access the API documentation at:
 GET /api/weather/city?city={cityName}
 ```
 
-**Parameters:**
-- `city` (required): Name of the city
-
-**Example:**
-```
-GET /api/weather/city?city=London
-```
-
-### Get Weather by Coordinates
-
-```
-GET /api/weather/coordinates?lat={latitude}&lon={longitude}
-```
-
-**Parameters:**
-- `lat` (required): Latitude
-- `lon` (required): Longitude
-
-**Example:**
-```
-GET /api/weather/coordinates?lat=51.5074&lon=-0.1278
-```
 
 ## Error Handling
 
@@ -129,15 +96,3 @@ Responses are cached for 10 minutes by default to improve performance and reduce
 ## Logging
 
 Logs are written to both the console and log files in the `logs` directory. The log level can be configured using the `LOG_LEVEL` environment variable.
-
-## Testing
-
-To run tests:
-
-```bash
-npm test
-```
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
