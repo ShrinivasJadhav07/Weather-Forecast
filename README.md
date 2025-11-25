@@ -21,17 +21,23 @@ This is the backend service for the Weather Application, built with Node.js and 
 
 1. Clone the repository
 2. Navigate to the backend directory:
+   ```bash
    cd weather-app/backend
-3. Install dependencies: 
+   ```
+3. Install dependencies:
+   ```bash
    npm install
-4. Create a `.env` file in the root directory and add your WeatherAPI.API key:
+   ```
+4. Create a `.env` file in the root directory and add your WeatherAPI.com API key:
+   ```env
    WEATHERAPI_KEY=your_api_key_here
+   ```
 
 ## Configuration
 
 The application can be configured using environment variables. Create a `.env` file in the root directory with the following variables:
 
-env
+```env
 # Server Configuration
 PORT=5000
 
@@ -46,22 +52,31 @@ MAX_CACHE_ENTRIES=100  # Maximum number of entries to store in cache
 # Logging
 LOG_LEVEL=info  # error, warn, info, debug
 NODE_ENV=development  # production or development
-
+```
 
 ## Running the Application
 
 ### Development Mode
 
-->npm run dev
-
+```bash
+npm run dev
+```
 
 This will start the server with nodemon, which automatically restarts the server when files change.
 
 ### Production Mode
 
+```bash
+npm start
+```
 
-->npm start
+## API Documentation
 
+Once the server is running, you can access the API documentation at:
+- Swagger UI: `http://localhost:5000/api-docs`
+- JSON Spec: `http://localhost:5000/api-docs.json`
+
+## Available Endpoints
 
 ### Get Weather by City
 
@@ -75,6 +90,21 @@ GET /api/weather/city?city={cityName}
 **Example:**
 ```
 GET /api/weather/city?city=London
+```
+
+### Get Weather by Coordinates
+
+```
+GET /api/weather/coordinates?lat={latitude}&lon={longitude}
+```
+
+**Parameters:**
+- `lat` (required): Latitude
+- `lon` (required): Longitude
+
+**Example:**
+```
+GET /api/weather/coordinates?lat=51.5074&lon=-0.1278
 ```
 
 ## Error Handling
@@ -100,3 +130,14 @@ Responses are cached for 10 minutes by default to improve performance and reduce
 
 Logs are written to both the console and log files in the `logs` directory. The log level can be configured using the `LOG_LEVEL` environment variable.
 
+## Testing
+
+To run tests:
+
+```bash
+npm test
+```
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
